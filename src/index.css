@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #1e293b;
+  }
+
+  /* Light comfortable scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0072B1;
+  }
+}
+
+/* Minimalist Clean Light Card */
+.card-clean {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-clean:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px 0 rgba(0, 114, 177, 0.08);
+}
+
+/* Primary Button in STI Logo Blue */
+.btn-primary {
+  background-color: #0072B1;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #005a8e;
+  box-shadow: 0 2px 8px rgba(0, 114, 177, 0.25);
+}
+
+/* Light Outline Button */
+.btn-outline {
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline:hover {
+  background-color: #f8fafc;
+  border-color: #0072B1;
+  color: #0072B1;
+}

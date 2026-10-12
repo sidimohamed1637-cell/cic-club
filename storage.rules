@@ -1,0 +1,11 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // السماح برفع الملفات بحجم أقل من 10 ميغابايت
+      allow write: if request.resource.size < 10 * 1024 * 1024;
+      // السماح بقراءة وتحميل الملفات
+      allow read: if true;
+    }
+  }
+}

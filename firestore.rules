@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // قواعد جدول الأعضاء (Members)
+    match /members/{memberId} {
+      // السماح للجميع بتقديم طلب العضوية
+      allow create: if true;
+      // قراءة وتعديل وحذف الطلبات محصور فقط بالأدمن المسجل
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // قواعد الدورات والورشات التدريبية (Courses)
+    match /courses/{courseId} {
+      // قراءة الدورات متاحة للجميع
+      allow read: if true;
+      // الإضافة والتعديل والحذف محصورة بالأدمن فقط
+      allow write: if request.auth != null;
+    }
+
+    // قواعد تسجيل الطلاب في الدورات (Course Registrations)
+    match /course_registrations/{regId} {
+      // السماح لجميع الطلاب بالتسجيل
+      allow create: if true;
+      // استعراض وإدارة المسجلين للأدمن فقط
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // قواعد المكتب التنفيذي والإعدادات (Board Members & Settings)
+    match /board_members/{memberId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}
