@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>البطاقة التقنية الرسمية - نادي الإبداع والابتكار CIC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    .header-box {
+      border-bottom: 2.5px solid #0072B1;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: #1e293b;
+    }
+    .header-right .republic {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .header-right .univ {
+      font-weight: 800;
+      color: #0072B1;
+      font-size: 12px;
+    }
+    .header-right .faculty {
+      font-weight: 700;
+      color: #334155;
+    }
+    .header-left {
+      text-align: left;
+      font-size: 10px;
+      color: #475569;
+      line-height: 1.5;
+    }
+    .header-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0072B1;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #bae6fd;
+      font-size: 10.5px;
+      margin-bottom: 4px;
+    }
+    .title-banner {
+      background: linear-gradient(135deg, #0b0f19 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 12px 18px;
+      text-align: center;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .title-banner h1 {
+      margin: 0 0 3px 0;
+      font-size: 17px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+    .title-banner .sub {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    .title-banner .slogan {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-top: 3px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .section-card {
+      background: #f8fafc;
+      border: 1.2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 11px;
+    }
+    .section-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0072B1;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-title .bullet {
+      width: 7px;
+      height: 7px;
+      background: #0072B1;
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 10.5px;
+    }
+    .info-list li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-right: 14px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .info-list li::before {
+      content: '■';
+      position: absolute;
+      right: 0;
+      color: #0284c7;
+      font-size: 7px;
+      top: 2px;
+    }
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .track-item {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 6px 9px;
+    }
+    .track-item strong {
+      display: block;
+      color: #0f172a;
+      font-size: 10.5px;
+      margin-bottom: 2px;
+    }
+    .track-item span {
+      color: #64748b;
+      font-size: 9.5px;
+      line-height: 1.35;
+      display: block;
+    }
+    .board-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+    .board-table th, .board-table td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 7px;
+      text-align: right;
+    }
+    .board-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .contact-box {
+      background: #eff6ff;
+      border: 1.2px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-top: 6px;
+      font-size: 10px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #1e3a8a;
+    }
+    .footer-signs {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1.5px solid #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 10px;
+    }
+    .sign-box {
+      text-align: center;
+      width: 180px;
+    }
+    .stamp-placeholder {
+      height: 55px;
+      border: 1.2px dashed #94a3b8;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 9.5px;
+      margin-top: 4px;
+      background: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Official University Header -->
+  <div class="header-box">
+    <div class="header-right">
+      <div class="republic">الجمهورية الجزائرية الديمقراطية الشعبية</div>
+      <div>وزارة التعليم العالي والبحث العلمي</div>
+      <div class="univ">جامعة تامنغست</div>
+      <div class="faculty">كلية العلوم والتكنولوجيا</div>
+    </div>
+    <div class="header-left">
+      <div class="header-badge">نادي علمي وتقني معتمد</div>
+      <div>الموسم الجامعي: <strong>2026 / 2027</strong></div>
+      <div>كود الوثيقة: <strong>CIC-STI-DOC-01</strong></div>
+      <div>تاريخ التحديث: <strong>12‏/10‏/2026</strong></div>
+    </div>
+  </div>
+
+  <!-- Title Banner -->
+  <div class="title-banner">
+    <h1>البطاقة التقنية والتعريفية الرسمية للنادي</h1>
+    <div class="sub">نادي الإبداع والابتكار (CIC) — Creativity & Innovation Club</div>
+    <div class="slogan">« فضاء طلابي لتطوير المهارات الهندسية، الروبوتات والأنظمة الذكية »</div>
+  </div>
+
+  <!-- 1. Identity & Affiliation -->
+  <div class="grid-2">
+    <div class="section-card" style="margin-bottom: 0;">
+      <div class="section-title"><span class="bullet"></span> بطاقة الهوية والتأسيس</div>
+      <ul class="info-list">
+        <li><strong>الاسم بالعربية:</strong> نادي الإبداع والابتكار.</li>
+        <li><strong>الاسم بالإنجليزية:</strong> Creativity & Innovation Club (CIC).</li>
+        <li><strong>التبعية الأكاديمية:</strong> كلية العلوم والتكنولوجيا - جامعة تامنغست.</li>
+        <li><strong>الصفة القانونية:</strong> نادٍ علمي طلابي معتمد برحاب الكلية.</li>
+        <li><strong>المقر:</strong> كلية العلوم والتكنولوجيا، القطب الجامعي، تامنغست.</li>
+      </ul>
+    </div>
+
+    <div class="section-card" style="margin-bottom: 0;">
+      <div class="section-title"><span class="bullet"></span> الرؤية والرسالة الهندسية</div>
+      <ul class="info-list">
+        <li><strong>رؤية النادي:</strong> أن يكون النادي الحاضنة الطلابية النموذجية بكلية العلوم والتكنولوجيا لإعداد مهندسي ومبتكري المستقبل في مجالات الإلكترونيات والتصنيع الذكي وعلوم الروبوتات.</li>
+        <li><strong>رسالة النادي:</strong> توفير بيئة تدريبية ومخبرية تطبيقية حقيقية للطلبة، ودعمهم في بناء النماذج الأولية لمشاريعهم واختبارها للمنافسة في التظاهرات العلمية.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. Strategic Objectives -->
+  <div class="section-card" style="margin-top: 10px;">
+    <div class="section-title"><span class="bullet"></span> الأهداف الاستراتيجية والتطبيقية للنادي</div>
+    <div class="grid-2" style="margin-bottom: 0;">
+      <ul class="info-list">
+        <li>تمكين طلبة العلوم والتكنولوجيا من المهارات العملية في التعامل مع العتاد الإلكتروني والمتحكمات.</li>
+        <li>تشجيع ثقافة الابتكار وبناء النماذج الهندسية الأولية (Prototypes) القابلة للتطبيق الميداني.</li>
+        <li>تمثيل كلية العلوم والتكنولوجيا وجامعة تامنغست في المسابقات والهاكاثونات الوطنية والدولية.</li>
+      </ul>
+      <ul class="info-list">
+        <li>تنظيم دورات تكوينية وورشات تدريبية متخصصة ومجانية طيلة الموسم الجامعي.</li>
+        <li>خلق بيئة تفاعلية وتبادل الخبرات بين طلبة التخصصات الهندسية المختلفة.</li>
+        <li>المساهمة في رقمنة وتحديث المشاريع الجامعية ونشر الثقافة التكنولوجية.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. Technical Tracks -->
+  <div class="section-card">
+    <div class="section-title"><span class="bullet"></span> المحاور والورشات التكوينية المعتمدة للنادي</div>
+    <div class="tracks-grid">
+      <div class="track-item">
+        <strong>1. الإلكترونيات والأنظمة المدمجة (Embedded Systems)</strong>
+        <span>برمجة المتحكمات الدقيقة (Arduino, ESP32, STM32) والتعامل مع المستشعرات والدوائر المنطقية التطبيقية.</span>
+      </div>
+      <div class="track-item">
+        <strong>2. الروبوتات والميكاترونيكس (Robotics & Mechatronics)</strong>
+        <span>تصميم وتركيب الروبوتات المتنقلة والأذرع الآلية وبرمجة خوارزميات الحركة والملاحة وتفادي العقبات.</span>
+      </div>
+      <div class="track-item">
+        <strong>3. البرمجة وتطوير البرمجيات (Software Development)</strong>
+        <span>صقل المهارات البرمجية بلغات C++ و Python وبناء واجهات المستخدم وربطها بالعتاد الذكي.</span>
+      </div>
+      <div class="track-item">
+        <strong>4. تصميم الدوائر المطبوعة (PCB Design) وإنترنت الأشياء (IoT)</strong>
+        <span>رسم المخططات الإلكترونية وتصميم لوحات الـ PCB وربط الحساسات بشبكة الإنترنت للتحكم السحابي.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Membership & Guidelines -->
+  <div class="grid-2">
+    <div class="section-card" style="margin-bottom: 0;">
+      <div class="section-title"><span class="bullet"></span> شروط العضوية والانخراط</div>
+      <ul class="info-list">
+        <li>أن يكون الطالب مسجلاً بصفة نظامية بجامعة تامنغست.</li>
+        <li>التسجيل عبر البوابة الرقمية للنادي وإدخال البيانات بدقة.</li>
+        <li>إرفاق الشهادة المدرسية وبطاقة الطالب لتأكيد الهوية الجامعية.</li>
+        <li>الالتزام بحضور الورشات التدريبية والمشاركة الفعالة في الأنشطة.</li>
+      </ul>
+    </div>
+
+    <div class="section-card" style="margin-bottom: 0;">
+      <div class="section-title"><span class="bullet"></span> التأطير الأكاديمي والإداري</div>
+      <ul class="info-list">
+        <li><strong>الإشراف الأكاديمي:</strong> تأطير علمي من أساتذة كلية العلوم والتكنولوجيا.</li>
+        <li><strong>المكتب التنفيذي:</strong> يضم لجان الرئاسة، الأمانة العامة، الورشات والمشاريع، الإعلام والتصميم، والمالية واللوجستيك.</li>
+        <li><strong>نظام الورشات:</strong> ورشات تطبيقية أسبوعية في مخابر وقاعات الكلية المعتمدة.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5. Official Contact Channels -->
+  <div class="contact-box">
+    <div style="font-weight: 800; color: #1e3a8a; margin-bottom: 5px; font-size: 10.5px;">قنوات التواصل والاعتماد الرسمي للنادي:</div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span>📧 <strong>البريد الرسمي:</strong> creativityinnovationclubtam@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span>🌐 <strong>صفحة الفيسبوك:</strong> facebook.com/share/19guWubGZ1/</span>
+      </div>
+      <div class="contact-item">
+        <span>💬 <strong>الواتساب:</strong> سيتوفر خط التواصل المباشر قريباً</span>
+      </div>
+      <div class="contact-item">
+        <span>📍 <strong>المقر الميداني:</strong> كلية العلوم والتكنولوجيا - جامعة تامنغست</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Signatures -->
+  <div class="footer-signs">
+    <div class="sign-box">
+      <strong>رئيس نادي الإبداع والابتكار</strong>
+      <div class="stamp-placeholder">توقيع إدارة النادي</div>
+    </div>
+
+    <div class="sign-box">
+      <strong>الأستاذ المشرف على النادي</strong>
+      <div class="stamp-placeholder">تأشيرة الأستاذ المشرف</div>
+    </div>
+
+    <div class="sign-box">
+      <strong>عمادة كلية العلوم والتكنولوجيا</strong>
+      <div class="stamp-placeholder">ختم واعتماد الكلية</div>
+    </div>
+  </div>
+
+</body>
+</html>
